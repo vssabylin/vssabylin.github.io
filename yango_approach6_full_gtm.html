@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yango.Tech CIS — Approach 6 Full GTM Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Söhne,ui-sans-serif,system-ui,sans-serif&family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fcfcfa;
+    --surface: #ffffff;
+    --surface2: #f7f7f5;
+    --surface3: #f0efed;
+    --border: #e0dfdc;
+    --border-light: #eae9e6;
+    --text: #1a1a18;
+    --text-mid: #3d3d3a;
+    --text-muted: #7a7a75;
+    --text-dim: #a3a39e;
+    --accent: #c0392b;
+    --accent-light: #fdf2f0;
+    --accent-border: #f5cdc8;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --green-border: #86efac;
+    --yellow: #ca8a04;
+    --yellow-bg: #fefce8;
+    --yellow-border: #fde047;
+    --red: #dc2626;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.72;
+    padding: 48px 32px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Typography */
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 32px; font-weight: 700; letter-spacing: -0.5px;
+    line-height: 1.2; margin-bottom: 8px;
+  }
+  h1 span { color: var(--accent); }
+  .lead { font-size: 16px; color: var(--text-muted); max-width: 650px; margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 3px; color: var(--accent);
+    margin: 56px 0 20px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  h3 {
+    font-size: 18px; font-weight: 700; margin: 28px 0 10px;
+    line-height: 1.3;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 16px 0;
+  }
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--text-dim);
+    margin-bottom: 10px; display: block;
+  }
+
+  /* UVP box */
+  .uvp {
+    background: var(--accent-light);
+    border: 2px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 16px 0;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  /* Tables */
+  .tw {
+    overflow-x: auto; border-radius: 8px;
+    border: 1px solid var(--border-light);
+    background: var(--surface); margin: 16px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-family: 'Source Serif 4', Georgia, serif; }
+  thead th {
+    background: var(--surface2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--text-muted);
+    padding: 11px 14px; text-align: left;
+    border-bottom: 1px solid var(--border); white-space: nowrap;
+  }
+  tbody td {
+    padding: 10px 14px; border-bottom: 1px solid var(--border-light);
+    vertical-align: top; color: var(--text-mid); line-height: 1.6;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--surface2); }
+  td:first-child { font-weight: 600; color: var(--text); min-width: 150px; }
+  td strong { color: var(--text); }
+
+  /* Pitch boxes */
+  .pitch {
+    background: var(--yellow-bg); border: 1px solid var(--yellow-border);
+    border-radius: 8px; padding: 20px 24px; margin: 12px 0;
+    font-size: 14px; line-height: 1.7; color: var(--text-mid);
+  }
+  .pitch strong { color: var(--text); }
+  .pitch .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--yellow); margin-bottom: 6px; display: block;
+  }
+
+  /* Green callout */
+  .callout {
+    background: var(--green-bg); border: 1px solid var(--green-border);
+    border-radius: 8px; padding: 20px 24px; margin: 16px 0;
+    font-size: 14px; line-height: 1.7;
+  }
+  .callout strong { color: var(--text); }
+
+  /* Red warning */
+  .warning {
+    background: #fef2f2; border: 1px solid #fecaca;
+    border-radius: 8px; padding: 20px 24px; margin: 16px 0;
+    font-size: 14px; line-height: 1.7;
+  }
+
+  /* Grid */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* Agent cards */
+  .agent-card {
+    background: var(--surface); border: 1px solid var(--border-light);
+    border-radius: 8px; padding: 20px; border-top: 3px solid var(--accent);
+  }
+  .agent-card h4 {
+    font-size: 15px; font-weight: 700; margin-bottom: 8px;
+  }
+  .agent-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+  .agent-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--text-dim);
+    margin-top: 10px; line-height: 1.8;
+  }
+
+  /* Funnel */
+  .funnel {
+    display: flex; align-items: center; gap: 0; flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .funnel-step {
+    background: var(--accent-light); color: var(--accent);
+    border: 1px solid var(--accent-border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600;
+    padding: 6px 14px; border-radius: 6px; white-space: nowrap;
+  }
+  .funnel-arrow { font-size: 14px; color: var(--text-dim); padding: 0 6px; }
+
+  /* Timeline */
+  .timeline-item {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 16px; margin: 12px 0; padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .t-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; color: var(--accent);
+    padding-top: 2px;
+  }
+  .t-content { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+  .t-content strong { color: var(--text); }
+
+  ul { list-style: none; padding: 0; }
+  li { padding: 3px 0 3px 18px; position: relative; }
+  li::before { content: '→'; position: absolute; left: 0; color: var(--text-dim); font-size: 13px; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  @media(max-width:800px) {
+    .grid2, .grid3 { grid-template-columns: 1fr; }
+    body { padding: 24px 16px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Approach 6: <span>Agent-as-a-Service</span></h1>
+<p class="lead">Full GTM playbook for Yango.Tech CIS. Every element mapped against the B2B SaaS GTM framework: ICP, positioning, UVP, pricing, sales motion, channels, funnel, team, and 90-day plan.</p>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>1 — Positioning & UVP</h2>
+
+<h3>What we are</h3>
+<p>Yango.Tech deploys AI agents that perform specific jobs inside enterprise companies in Kazakhstan and Uzbekistan. Not consulting. Not "AI strategy." Working agents that handle calls, answer employee questions, or process documents — 24/7, in Russian and Kazakh, with measurable results tied to payment.</p>
+
+<div class="uvp">
+  "We deploy AI agents that do real work in your company — handling customer calls, answering employee questions, or processing documents. Live in 4-6 weeks. You pay only if the metrics improve."
+</div>
+
+<h3>Why this UVP works</h3>
+<div class="card">
+  <ul>
+    <li><strong>No expertise claim</strong> — we don't pretend to be banking experts with zero B2B track record. We sell working technology + accountability for results</li>
+    <li><strong>Outcome-tied</strong> — "pay only if metrics improve" removes the biggest objection ("you have no case studies"). Client risk = near zero</li>
+    <li><strong>"Agent" not "project"</strong> — different mental model for the buyer. Not a scary AI transformation. A digital worker that costs $2K/mo instead of $1.5K/mo human, but works 24/7</li>
+    <li><strong>Time-boxed</strong> — "4-6 weeks" makes it feel actionable, not a 12-month initiative</li>
+    <li><strong>Local language</strong> — "Russian and Kazakh" signals local relevance. No global AI vendor offers Kazakh language support</li>
+  </ul>
+</div>
+
+<h3>How we are different from competitors</h3>
+<div class="tw">
+<table>
+  <thead><tr><th>Competitor</th><th>What they sell</th><th>Their weakness</th><th>Our counter</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>КРОК / Accenture</td>
+      <td>Consulting + custom dev</td>
+      <td>Sell hours, not outcomes. 6-12 month projects. Won't guarantee results</td>
+      <td>"We guarantee metrics. They guarantee invoices."</td>
+    </tr>
+    <tr>
+      <td>Local dev shops</td>
+      <td>Custom software</td>
+      <td>No AI expertise. Build from scratch every time</td>
+      <td>"We have pre-built agent framework. Live in 4 weeks, not 6 months."</td>
+    </tr>
+    <tr>
+      <td>Yandex Cloud direct</td>
+      <td>APIs and tools</td>
+      <td>No implementation. "Here's the API, good luck"</td>
+      <td>"We deliver working agents, not documentation."</td>
+    </tr>
+    <tr>
+      <td>Global AI vendors</td>
+      <td>Enterprise AI platforms</td>
+      <td>No local presence, no Russian/Kazakh, $500K minimum, 12-month onboarding</td>
+      <td>"We are here. We speak your language. We start in 4 weeks for $20K."</td>
+    </tr>
+    <tr>
+      <td>Internal IT team</td>
+      <td>"We'll build it ourselves"</td>
+      <td>6-18 months, unknown cost, competes with core priorities</td>
+      <td>"Try our agent for 6 weeks. If your team can beat it — keep building."</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>2 — ICP & Segmentation</h2>
+
+<h3>ICP definition</h3>
+<div class="tw">
+<table>
+  <thead><tr><th>Dimension</th><th>Criteria</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Geography</td><td><strong>Kazakhstan (primary), Uzbekistan (secondary)</strong></td><td>Strong Yango brand, local presence, accessible market</td></tr>
+    <tr><td>Company size</td><td><strong>500+ employees</strong></td><td>Below 500 — no budget, no pain at scale. Above 5,000 — procurement too complex for first deals</td></tr>
+    <tr><td>Revenue</td><td><strong>$50M+ annual</strong></td><td>Can afford $20-50K PoC without 6-month approval process</td></tr>
+    <tr><td>Trigger signals</td><td><strong>Hiring for digital/AI roles, CX transformation announced, new CDO/CTO appointed, contact center expansion</strong></td><td>These mean budget is allocated and pain is recognized</td></tr>
+    <tr><td>Tech readiness</td><td><strong>Has CRM or core system with API access; cloud-friendly IT policy</strong></td><td>If IT is locked down with zero API access — agent integration is impossible</td></tr>
+    <tr><td>Disqualifiers</td><td><strong>Government procurement (tender-only), companies with <100 customer service interactions/day</strong></td><td>Tenders = 12+ months. Low volume = no ROI for AI agent</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Target verticals — ranked by speed to money</h3>
+<div class="tw">
+<table>
+  <thead><tr><th>Vertical</th><th>Why target</th><th>Agent fit</th><th>Deal size</th><th>Sales cycle</th><th>Yango.Tech edge</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>🥇 Telecom</strong></td>
+      <td>Highest call volumes (millions/mo), standardized intents, already invest in automation, CTO-driven buying</td>
+      <td>Customer Service Agent: balance, tariff change, complaints, roaming — 60-70% of calls are automatable</td>
+      <td>$50-200K/yr</td>
+      <td>2-4 months</td>
+      <td>Yango IS a tech company. Telco CTOs see peers, not outsiders. Yango operates in same markets (Kcell/Beeline territory)</td>
+    </tr>
+    <tr>
+      <td><strong>🥈 Banks (Tier 2-3)</strong></td>
+      <td>Large CC operations, strong ROI case, digital transformation budgets. Tier 2-3 banks (ForteBank, Bank CenterCredit, Jusan) move faster than Halyk/Kaspi</td>
+      <td>Customer Service Agent + Knowledge Agent (internal regulations, compliance Q&A for employees)</td>
+      <td>$40-150K/yr</td>
+      <td>3-5 months</td>
+      <td>Yango brand trust. Smaller banks want innovation but can't afford Accenture</td>
+    </tr>
+    <tr>
+      <td><strong>🥉 Retail / E-commerce</strong></td>
+      <td>High customer inquiry volume, seasonal peaks, standardized queries (order status, returns, delivery)</td>
+      <td>Customer Service Agent: order tracking, returns, FAQ — highly standardized, fastest PoC</td>
+      <td>$20-80K/yr</td>
+      <td>1-3 months</td>
+      <td>Yango IS e-commerce/delivery — genuine operational expertise here. Credibility is real</td>
+    </tr>
+    <tr>
+      <td style="color:var(--text-dim);">Insurance</td>
+      <td style="color:var(--text-dim);">Claims processing, policy queries</td>
+      <td style="color:var(--text-dim);">Document Agent + Customer Service Agent</td>
+      <td style="color:var(--text-dim);">$30-100K</td>
+      <td style="color:var(--text-dim);">3-6 months</td>
+      <td style="color:var(--text-dim);">Weak. No connection. Phase 2</td>
+    </tr>
+    <tr>
+      <td style="color:var(--text-dim);">Government</td>
+      <td style="color:var(--text-dim);">Citizen services, document processing</td>
+      <td style="color:var(--text-dim);">Document Agent + Customer Service Agent</td>
+      <td style="color:var(--text-dim);">$50-300K</td>
+      <td style="color:var(--text-dim);">6-18 months</td>
+      <td style="color:var(--text-dim);">Very weak. Tenders only. Phase 3 at earliest</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout">
+  <strong>Recommendation:</strong> Start with Telecom + Retail simultaneously (fastest cycles, highest Yango credibility), add Tier 2-3 Banks within 2-3 months. Don't target Tier 1 banks (Kaspi, Halyk) or Government until you have 3+ case studies.
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>3 — Agent Portfolio</h2>
+
+<div class="grid3">
+  <div class="agent-card">
+    <h4>🎧 Customer Service Agent</h4>
+    <p>Handles inbound customer calls and chats. Resolves standard queries autonomously, routes complex ones to human operators with full context.</p>
+    <div class="agent-meta">
+      <strong>Tech:</strong> SpeechKit STT/TTS + YandexGPT + Integration API<br>
+      <strong>Intents:</strong> 20-40 per vertical (configured, not coded)<br>
+      <strong>Languages:</strong> Russian, Kazakh, Uzbek<br>
+      <strong>Metric:</strong> % calls resolved without human<br>
+      <strong>Target:</strong> 40-60% automation rate<br>
+      <strong>PoC timeline:</strong> 4-6 weeks<br>
+      <strong>Pricing:</strong> $0.50-1.50 per resolved interaction OR $3-8K/mo flat
+    </div>
+  </div>
+
+  <div class="agent-card">
+    <h4>🧠 Knowledge Agent</h4>
+    <p>Answers employee questions from internal knowledge base — regulations, policies, procedures, HR rules, product specs. Replaces "asking the senior colleague."</p>
+    <div class="agent-meta">
+      <strong>Tech:</strong> YandexGPT + RAG pipeline + Document ingestion<br>
+      <strong>Data sources:</strong> Confluence, SharePoint, PDF policies, internal wikis<br>
+      <strong>Languages:</strong> Russian (primary), bilingual docs supported<br>
+      <strong>Metric:</strong> Time to answer, accuracy rate, adoption rate<br>
+      <strong>Target:</strong> 80%+ accuracy on trained corpus<br>
+      <strong>PoC timeline:</strong> 2-3 weeks (fastest agent)<br>
+      <strong>Pricing:</strong> $2-5K/mo (by user count or flat)
+    </div>
+  </div>
+
+  <div class="agent-card">
+    <h4>📄 Document Agent</h4>
+    <p>Processes incoming documents — extracts data, classifies, validates, routes. KYC forms, applications, invoices, contracts.</p>
+    <div class="agent-meta">
+      <strong>Tech:</strong> Vision OCR + YandexGPT + Workflow engine<br>
+      <strong>Doc types:</strong> Passports, IDs, applications, invoices<br>
+      <strong>Languages:</strong> Russian, Kazakh, bilingual documents<br>
+      <strong>Metric:</strong> Processing time reduction, error rate<br>
+      <strong>Target:</strong> 70-90% auto-processing rate<br>
+      <strong>PoC timeline:</strong> 3-4 weeks<br>
+      <strong>Pricing:</strong> $0.20-0.80 per document OR $2-5K/mo flat
+    </div>
+  </div>
+</div>
+
+<div class="warning">
+  <strong>Phase 1 focus:</strong> Launch with Customer Service Agent + Knowledge Agent only. Document Agent adds complexity (OCR pipeline, document-specific training). Add in Phase 2 (month 4-6) when first two agents are proven.
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>4 — Sales Motion — Three Hypotheses</h2>
+
+<h3>Hypothesis A: "Demo-first outbound"</h3>
+<div class="card">
+  <span class="card-label">Best for: Telecom and Retail</span>
+  <p><strong>Core idea:</strong> Build a working demo agent BEFORE any outreach. Lead every conversation with "let me show you." No pitch decks. No capability presentations. Working software on screen in the first 5 minutes.</p>
+  
+  <div class="pitch">
+    <span class="label">LinkedIn message</span>
+    <strong>To: VP Customer Operations, Kcell</strong><br><br>
+    "[Name], quick question — what % of your inbound calls are "check my balance" or "change my tariff"? At Yango.Tech we've built an AI agent that handles exactly these calls autonomously — in Russian and Kazakh. I can show you a working demo in 15 minutes with your actual call scenarios. Worth a look?"
+  </div>
+
+  <div class="pitch">
+    <span class="label">1st meeting script (30 min)</span>
+    <strong>Min 0-5:</strong> "Thanks for the time. I won't show slides. Let me show you something real." → Live demo: call the agent, ask "хочу сменить тариф", watch it handle the conversation.<br><br>
+    <strong>Min 5-10:</strong> "This is configured for [telecom] scenarios. It handles 25 standard intents. Let me show you [balance check, complaint routing, tariff comparison]."<br><br>
+    <strong>Min 10-20:</strong> Discovery: "How many calls/day do you handle? What % are standard? What's your current automation rate? What's cost per call?" → Building ROI model live.<br><br>
+    <strong>Min 20-25:</strong> "Based on what you told me — 50K calls/day, 60% standard, $1.20/call — if our agent handles even 30% of standard calls, that's $X/month savings. Here's how we'd validate this."<br><br>
+    <strong>Min 25-30:</strong> Propose paid PoC: "4 weeks, one call type (e.g. balance inquiry), real traffic, $15-25K. If agent doesn't hit 30% automation — you don't pay."
+  </div>
+
+  <p style="margin-top:12px;"><strong>Why this works:</strong> Telco and retail CTOs are engineers. They trust what they see, not what they hear. A working demo in the first meeting is 10x more powerful than any pitch deck. And the "you don't pay if it doesn't work" removes all remaining objections.</p>
+  <p><strong>What you need:</strong> Working demo agent configured for 10-15 telecom intents (balance, tariff, complaint) + same for retail (order status, returns, delivery). 2-3 weeks to build before first outreach.</p>
+</div>
+
+<h3>Hypothesis B: "Problem-led warm intro"</h3>
+<div class="card">
+  <span class="card-label">Best for: Banks (Tier 2-3)</span>
+  <p><strong>Core idea:</strong> Banks don't respond to cold outreach from unknown B2B brands. Entry must be through warm introductions — from Yango leadership, from existing Yandex Cloud contacts, from industry events. Lead with the client's specific problem, not your product.</p>
+
+  <div class="pitch">
+    <span class="label">Intro request to connector</span>
+    "We're looking to connect with [Head of CC / CDO] at [ForteBank]. We've built AI agents that handle customer calls in Russian and Kazakh — and we're offering the first 3 banks a risk-free pilot. Can you make an intro?"
+  </div>
+
+  <div class="pitch">
+    <span class="label">1st meeting script (45 min)</span>
+    <strong>Min 0-5:</strong> "Thank you [connector name] for the intro. I'll be brief — we build AI agents for customer service. But first, I'd love to understand your situation."<br><br>
+    <strong>Min 5-20:</strong> Deep discovery: CC size, call volume, top call reasons, current IVR performance, pain points, digital transformation priorities, budget cycle timing.<br><br>
+    <strong>Min 20-30:</strong> Map 2-3 problems to specific agents: "Based on what you said — your biggest pain is [X]. Here's specifically how our Customer Service Agent would handle it." Brief demo.<br><br>
+    <strong>Min 30-40:</strong> ROI discussion: "If we automate just [specific call type], based on your volume, estimated annual savings = $Y."<br><br>
+    <strong>Min 40-45:</strong> "We're offering the first 3 banks in KZ a risk-free pilot — 6 weeks, one use case, outcome-guaranteed. Can we scope this in a follow-up next week?"
+  </div>
+
+  <p style="margin-top:12px;"><strong>Why this works:</strong> Banking deals require relationship trust + problem understanding. You can't cold-email a bank CTO. But "risk-free pilot, first 3 banks" creates urgency and exclusivity.</p>
+  <p><strong>What you need:</strong> 2-3 warm connectors into KZ banking (Yango leadership? Yandex Cloud contacts? Board members?). Banking-configured demo (balance inquiry, card block, loan status).</p>
+</div>
+
+<h3>Hypothesis C: "Land with Knowledge Agent, expand to CC"</h3>
+<div class="card">
+  <span class="card-label">Best for: Any vertical — fastest path to first revenue</span>
+  <p><strong>Core idea:</strong> Knowledge Agent is the easiest sell: no telephony integration, no production risk, no compliance complexity. Use it as a door opener, prove you can deliver, then upsell Customer Service Agent (the big money).</p>
+
+  <div class="pitch">
+    <span class="label">LinkedIn message</span>
+    <strong>To: CTO / CDO, any enterprise</strong><br><br>
+    "[Name], we've built an AI agent that answers employee questions from your internal docs — regulations, policies, procedures. Works in Russian. Setup takes 2 weeks, no IT integration needed. We're offering 3 companies in KZ a free 2-week trial. Interested?"
+  </div>
+
+  <div class="pitch">
+    <span class="label">1st meeting (20 min — deliberately short)</span>
+    <strong>Min 0-3:</strong> "Let me show you. I uploaded your company's public HR policy from your website. Watch:" → Ask agent a question about vacation policy → Agent answers correctly from the document.<br><br>
+    <strong>Min 3-8:</strong> "Now imagine this with your internal documents — 500 regulations, product specs, compliance rules. Your employees get answers in 10 seconds instead of 30 minutes."<br><br>
+    <strong>Min 8-15:</strong> "Setup: you give us access to your document repository. We configure the agent in 2 weeks. Your employees start using it. We measure adoption and accuracy."<br><br>
+    <strong>Min 15-20:</strong> "Free 2-week trial for the first 3 companies. After that — $3-5K/month. Deal?"
+  </div>
+
+  <p style="margin-top:12px;"><strong>Why this works:</strong> Lowest risk, fastest PoC, easiest "yes." CTO can approve $3-5K/mo without board approval. Once inside, you have relationship + trust to sell Customer Service Agent (10x revenue).</p>
+  <p><strong>Risk:</strong> Low ACV ($3-5K/mo = $36-60K/yr). Need volume. And "GPT over documents" is easy to replicate. Must move to CC Agent upsell within 3-6 months or competitor replaces you.</p>
+</div>
+
+<div class="callout">
+  <strong>My recommendation: Run all three hypotheses simultaneously for 60 days.</strong><br><br>
+  Hypothesis A (demo-first) → 10 telecom + retail targets<br>
+  Hypothesis B (warm intro) → 3-5 banking targets<br>
+  Hypothesis C (Knowledge Agent land) → 10 mixed targets<br><br>
+  After 60 days, data will tell you which motion converts. Double down on the winner. Kill the losers. This is how you avoid "analysis paralysis" — test, don't guess.
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>5 — Pricing & Packaging</h2>
+
+<div class="tw">
+<table>
+  <thead><tr><th>Element</th><th>Structure</th><th>Rationale</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>PoC / Pilot</td>
+      <td><strong>$15-30K</strong> (4-6 weeks, one agent, one use case). Outcome-guaranteed: if pre-agreed metric not hit, fee refunded</td>
+      <td>Low enough for CTO to approve without board. High enough to filter tire-kickers. Outcome guarantee removes risk objection</td>
+    </tr>
+    <tr>
+      <td>Post-PoC contract</td>
+      <td><strong>Platform fee $3-8K/mo + usage</strong>. 12-month annual contract. Usage = per resolved interaction (CS Agent) or per user (Knowledge Agent)</td>
+      <td>Hybrid model: platform fee = predictable revenue for you. Usage component = growth upside as client expands</td>
+    </tr>
+    <tr>
+      <td>Expansion</td>
+      <td><strong>+$3-8K/mo per additional agent type</strong>. Volume discounts for 3+ agents</td>
+      <td>Land with 1 agent → expand to 2-3. NRR target: 130%+</td>
+    </tr>
+    <tr>
+      <td>Enterprise (Year 2+)</td>
+      <td><strong>$80-200K annual contract</strong>. Multiple agents, custom integrations, dedicated support, SLA</td>
+      <td>Full platform deal after trust is established</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>6 — Channels & Lead Generation</h2>
+
+<div class="tw">
+<table>
+  <thead><tr><th>Channel</th><th>How it works</th><th>Expected output</th><th>Investment</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>LinkedIn outbound</strong></td>
+      <td>Signal-based targeting: companies hiring for CC/digital roles, announcing transformation. Personalized messages with demo offer. 50-80 messages/week</td>
+      <td>5-8 meetings/month (8-12% response rate with demo hook)</td>
+      <td>AE time + LinkedIn Sales Navigator ($100/mo)</td>
+    </tr>
+    <tr>
+      <td><strong>Warm intros</strong></td>
+      <td>Map Yango leadership connections to target accounts. Ask for 3-5 specific intros. "First 3 banks get risk-free pilot" as hook for connector</td>
+      <td>2-3 qualified meetings/month</td>
+      <td>Relationship capital. Zero cash cost</td>
+    </tr>
+    <tr>
+      <td><strong>Events & roundtables</strong></td>
+      <td>Host "AI in Customer Service" roundtable for 10-15 CX leaders in Almaty. Not a sales pitch — a discussion. Show demo casually. Quarterly</td>
+      <td>3-5 warm leads per event</td>
+      <td>$2-5K per event (venue, catering)</td>
+    </tr>
+    <tr>
+      <td><strong>Content / thought leadership</strong></td>
+      <td>LinkedIn posts: "What we learned deploying AI agents in KZ." Publish "State of Customer Service Automation in Central Asia" report (gated)</td>
+      <td>Inbound inquiries (2-3/month after 3 months of consistent posting)</td>
+      <td>Marketing person time (part-time)</td>
+    </tr>
+    <tr>
+      <td><strong>Yandex Cloud referral</strong></td>
+      <td>Informal: "When your KZ clients ask about AI implementation — send them to us." Not formal co-sell, but opportunistic referral</td>
+      <td>1-2 warm leads/quarter (unpredictable)</td>
+      <td>Relationship maintenance</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>7 — Funnel & Metrics</h2>
+
+<div class="funnel">
+  <span class="funnel-step">Outbound / Warm intro</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Demo meeting</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Discovery + ROI</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">PoC proposal</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Paid PoC (4-6wk)</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Results review</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Annual contract</span>
+  <span class="funnel-arrow">→</span>
+  <span class="funnel-step">Agent expansion</span>
+</div>
+
+<div class="tw">
+<table>
+  <thead><tr><th>Stage</th><th>Target conversion</th><th>Timeline</th><th>Owner</th></tr></thead>
+  <tbody>
+    <tr><td>Outbound → Meeting</td><td>8-12%</td><td>1-2 weeks</td><td>AE / SDR</td></tr>
+    <tr><td>Meeting → PoC proposal</td><td>30-40%</td><td>1-2 meetings</td><td>AE + SA</td></tr>
+    <tr><td>PoC proposal → Signed PoC</td><td>50-60%</td><td>2-4 weeks</td><td>AE</td></tr>
+    <tr><td>PoC → Annual contract</td><td>60-70%</td><td>4-6 weeks (PoC duration)</td><td>SA + AE</td></tr>
+    <tr><td>Contract → Expansion (2nd agent)</td><td>40-50%</td><td>3-6 months post-contract</td><td>CS / AE</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="card">
+  <span class="card-label">Pipeline math — Year 1 target</span>
+  <p>
+    <strong>100 outbound contacts/month</strong> → 10 meetings → 3-4 PoC proposals → 2 signed PoCs → 1-2 annual contracts<br><br>
+    <strong>Year 1 target:</strong> 8-12 PoCs, 5-8 annual contracts, $300-600K ARR<br>
+    <strong>Year 2 target:</strong> 15-20 contracts (new + expansion), $800K-1.5M ARR<br><br>
+    These are conservative. If Hypothesis A (demo-first) converts above 15% response rate — numbers go up significantly.
+  </p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>8 — Team & Capabilities</h2>
+
+<div class="tw">
+<table>
+  <thead><tr><th>Role</th><th>Month 1-3</th><th>Month 4-6</th><th>Month 7-12</th><th>Key competencies</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Senior AE / Sales Lead</strong></td>
+      <td>1 — sells + demo + discovery</td>
+      <td>1 — focuses on closing</td>
+      <td>1 + 1 SDR</td>
+      <td>Enterprise sales KZ/UZ, relationship network in telecom/banking, demo skills, MEDPICC. Can run entire sales cycle alone. <span style="color:var(--red);font-weight:700;">Hire #1</span></td>
+    </tr>
+    <tr>
+      <td><strong>Solution Architect</strong></td>
+      <td>1 — builds demo + PoC delivery + pre-sales</td>
+      <td>1 — PoC delivery + new demo configs</td>
+      <td>1 — pre-sales focused, delivery to contractors</td>
+      <td>Yandex Cloud (SpeechKit, YandexGPT, Vision), Python, API integration, system design. Must be able to configure new agent in 2-3 days. Product mindset — extracts reusable modules from every project. <span style="color:var(--red);font-weight:700;">Hire #2</span></td>
+    </tr>
+    <tr>
+      <td><strong>ML / LLM Engineer</strong></td>
+      <td>0.5 (contractor) — helps build first demo + first PoC</td>
+      <td>1 (contractor or hire) — PoC delivery</td>
+      <td>1 FTE — core delivery + product modules</td>
+      <td>RAG pipelines, YandexGPT fine-tuning, SpeechKit configuration, NLU intent training, Russian NLP. Convert to FTE when utilization >80% for 3 months</td>
+    </tr>
+    <tr>
+      <td><strong>Product Manager</strong></td>
+      <td>0 (SA covers)</td>
+      <td>0.5 (part-time)</td>
+      <td>1 FTE</td>
+      <td>B2B SaaS product management, roadmap from customer feedback, modular architecture thinking. Turns service patterns into product modules. Critical for the "Ladder" part of Services-to-Product</td>
+    </tr>
+    <tr>
+      <td><strong>Project Delivery / CS</strong></td>
+      <td>0 (SA covers)</td>
+      <td>0 (SA + contractor)</td>
+      <td>1 — manages active agents + onboarding</td>
+      <td>Client management, SLA monitoring, usage analytics, expansion identification. Hire when 3+ active contracts</td>
+    </tr>
+    <tr>
+      <td><strong>Marketing (content)</strong></td>
+      <td>0 (AE writes LinkedIn posts)</td>
+      <td>0.5 (freelancer)</td>
+      <td>1 — content + events</td>
+      <td>LinkedIn content, case study writing, event organization, basic design. Can be shared with MENA</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <span class="card-label">Month 1-3: 2.5 people</span>
+    <p><strong>AE + SA + ML contractor.</strong> Total cost: $12-18K/mo. AE sells and runs demo meetings. SA builds demo agents, delivers PoCs. ML contractor helps with LLM/speech configuration. This team can handle 2-3 simultaneous PoCs.</p>
+  </div>
+  <div class="card">
+    <span class="card-label">Month 7-12: 5-6 people</span>
+    <p><strong>AE + SDR + SA + ML engineer + PM + CS.</strong> Total cost: $30-45K/mo. Revenue should cover costs by month 6-8 ($25-40K/mo from 3-5 active contracts). Product modules emerging from PoC patterns.</p>
+  </div>
+</div>
+
+<h3>Capabilities that must exist BEFORE first outreach</h3>
+<div class="warning">
+  <strong>Non-negotiable prerequisites (build in Week 1-3):</strong><br><br>
+  <strong>1. Working demo agent</strong> — configured for telecom (5 intents: balance, tariff, complaint, roaming, payment) and retail (5 intents: order status, return, delivery, product info, complaint). Must handle a real phone call or chat in Russian. This is your entire sales weapon.<br><br>
+  <strong>2. ROI calculator</strong> — input: call volume, avg handle time, cost per call, current automation %. Output: annual savings, payback period. Spreadsheet is fine. Must be on screen during first meeting.<br><br>
+  <strong>3. PoC playbook</strong> — standardized document: week-by-week plan, success metrics (pre-agreed with client), data requirements, integration scope, team allocation. Same structure for every PoC, customized content.<br><br>
+  <strong>4. One-pager</strong> — not a pitch deck. One page: what agents do, how fast, what it costs, who you are. PDF. Sent after first meeting, not before.<br><br>
+  Without these four artifacts, do not start outbound. You will get meetings you can't convert.
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>9 — Services-to-Product Ladder</h2>
+
+<p>This is what makes Approach 6 strategically valuable, not just operationally profitable. Every PoC must build toward a product.</p>
+
+<div class="tw">
+<table>
+  <thead><tr><th>Phase</th><th>What you sell</th><th>Product maturity</th><th>Margin</th><th>What gets reused</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>PoC 1-2</strong></td>
+      <td>80% custom, 20% reusable</td>
+      <td>Framework only — agent architecture, basic NLU pipeline</td>
+      <td>20-30%</td>
+      <td>Core agent framework, SpeechKit integration layer, basic intent engine</td>
+    </tr>
+    <tr>
+      <td><strong>PoC 3-5</strong></td>
+      <td>50% custom, 50% reusable</td>
+      <td>Reusable modules — intent library per vertical, monitoring dashboard, onboarding scripts</td>
+      <td>35-45%</td>
+      <td>+ Intent templates per vertical, + analytics dashboard, + standard PoC toolkit</td>
+    </tr>
+    <tr>
+      <td><strong>Projects 6-10</strong></td>
+      <td>30% custom, 70% product</td>
+      <td>Semi-product — deploy new agent in 1-2 weeks instead of 4-6</td>
+      <td>50-60%</td>
+      <td>+ Admin console, + self-serve intent config, + multi-tenant architecture</td>
+    </tr>
+    <tr>
+      <td><strong>Projects 10+</strong></td>
+      <td>10% custom, 90% product</td>
+      <td>Product — "Yango AI Agent Platform." Deploy in days. SaaS pricing</td>
+      <td>65-75%</td>
+      <td>Full platform with vertical templates, marketplace of agent types</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout">
+  <strong>The discipline rule:</strong> After EVERY project, SA + PM (or SA alone in Phase 1) must answer: "What module from this project can be extracted and reused?" If the answer is "nothing" — you built wrong. Refactor before next project. This retro is mandatory, not optional. It's the difference between Approach 6 and Approach 3 (body shop).
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>10 — 90-Day Execution Plan</h2>
+
+<div class="timeline-item">
+  <div class="t-period">Week 1-2</div>
+  <div class="t-content">
+    <strong>Build demo agents.</strong> SA + ML contractor build two demo agents: telecom CS agent (5 intents, Russian) + generic Knowledge Agent (loads any documents). Test internally. Make it work on a real phone call or web chat. This is the single most important deliverable — without it, nothing else matters.<br><br>
+    <strong>In parallel:</strong> AE builds target list: 15 telecom contacts, 15 retail contacts, 10 banking contacts in KZ. LinkedIn Sales Navigator + manual research. Identify trigger signals (hiring, transformation announcements).
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="t-period">Week 2-3</div>
+  <div class="t-content">
+    <strong>Build sales toolkit.</strong> ROI calculator (spreadsheet), PoC playbook (template), one-pager (PDF). AE + SA collaborate. Not polished — functional. Can iterate after first meetings.<br><br>
+    <strong>In parallel:</strong> Map warm intros for banking targets. Ask Yango leadership: "Who do you know at ForteBank, Bank CenterCredit, Jusan?" Ask Yandex Cloud contacts for KZ referrals.
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="t-period">Week 3-6</div>
+  <div class="t-content">
+    <strong>Launch outbound.</strong> All three hypotheses simultaneously:<br>
+    • Hypothesis A: 50 LinkedIn messages to telecom + retail targets with demo offer<br>
+    • Hypothesis B: 3-5 warm intro requests for banking<br>
+    • Hypothesis C: 30 LinkedIn messages offering free Knowledge Agent trial<br><br>
+    <strong>Target:</strong> 8-12 first meetings booked by end of Week 6.
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="t-period">Week 6-8</div>
+  <div class="t-content">
+    <strong>Run first meetings. Iterate pitch.</strong> After every meeting — debrief: what worked? What question killed us? What objection did we not handle? Update pitch, demo, and ROI calc after every 3 meetings.<br><br>
+    <strong>Target:</strong> 3-4 PoC proposals sent by end of Week 8. At least 1 signed PoC.
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="t-period">Week 8-12</div>
+  <div class="t-content">
+    <strong>Deliver first PoC.</strong> All hands on deck. SA + ML contractor deliver. AE manages client relationship. Weekly progress calls with client stakeholder. Document EVERYTHING — this becomes Case Study #1.<br><br>
+    <strong>In parallel:</strong> Continue outbound for next wave. Pipeline should have 3-5 PoC proposals at various stages.<br><br>
+    <strong>Week 12 milestone:</strong> First PoC completed with measurable results. First case study written. Second PoC starting. Decision on which hypothesis (A/B/C) performed best → double down.
+  </div>
+</div>
+
+<div class="timeline-item">
+  <div class="t-period">Week 12+</div>
+  <div class="t-content">
+    <strong>First annual contract signed.</strong> Convert successful PoC → 12-month contract. Begin expansion conversation (2nd agent type).<br><br>
+    <strong>Productization starts:</strong> SA extracts reusable modules from PoC 1-2. Intent templates, integration patterns, monitoring tools. PM role activates (part-time).<br><br>
+    <strong>Revenue target by Month 3:</strong> $30-60K from PoCs. Not profitable yet — investment phase. Profitability target: Month 6-8.
+  </div>
+</div>
+
+<hr class="divider">
+
+<h2>GTM Framework Checklist</h2>
+<p>Mapped against the B2B SaaS GTM framework from our initial research.</p>
+
+<div class="tw">
+<table>
+  <thead><tr><th>GTM Element</th><th>Status</th><th>Detail</th></tr></thead>
+  <tbody>
+    <tr><td>ICP defined</td><td>✅</td><td>500+ employee enterprises in KZ/UZ, telecom → retail → Tier 2-3 banks. Trigger-based targeting</td></tr>
+    <tr><td>Segmentation</td><td>✅</td><td>By vertical × call volume × AI maturity. Three tiers: telecom (fastest), retail (fastest), banking (highest ACV)</td></tr>
+    <tr><td>Positioning</td><td>✅</td><td>"AI agents that do real work, outcome-guaranteed." Not expertise claim. Not tech vendor. Outcome accountability</td></tr>
+    <tr><td>Value proposition</td><td>✅</td><td>Three agents, measurable results, 4-6 weeks, pay-for-performance</td></tr>
+    <tr><td>Use cases</td><td>✅</td><td>Customer Service Agent, Knowledge Agent, Document Agent (Phase 2)</td></tr>
+    <tr><td>Pricing</td><td>✅</td><td>Paid PoC ($15-30K) → Platform + usage ($3-8K/mo) → Enterprise annual ($80-200K)</td></tr>
+    <tr><td>Sales motion</td><td>✅</td><td>Three hypotheses: demo-first outbound (telecom/retail), warm intro (banking), Knowledge Agent land (any). Test 60 days, pick winner</td></tr>
+    <tr><td>Channels</td><td>✅</td><td>LinkedIn outbound (primary), warm intros (banking), events (quarterly), content (ongoing), Yandex referral (opportunistic)</td></tr>
+    <tr><td>Funnel</td><td>✅</td><td>Outbound → Demo → Discovery/ROI → PoC proposal → Paid PoC → Contract → Expansion</td></tr>
+    <tr><td>Retention / expansion</td><td>✅</td><td>Land with 1 agent → expand to 2-3 agents → enterprise platform. NRR target 130%+</td></tr>
+    <tr><td>Team</td><td>✅</td><td>Month 1-3: AE + SA + ML contractor (2.5 people). Month 7-12: 5-6 people</td></tr>
+    <tr><td>Product path</td><td>✅</td><td>Services-to-Product Ladder: 80/20 custom → 30/70 custom → platform by Project 10+</td></tr>
+    <tr><td>Bridge to MENA</td><td>✅</td><td>Same agent types, same methodology. Add Yasmina Arabic speech for MENA. CIS case studies = MENA credibility</td></tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+</body>
+</html>
