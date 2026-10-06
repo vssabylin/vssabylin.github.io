@@ -1,0 +1,69 @@
+.pricing-section{padding:60px 0 38px;scroll-margin-top:85px;border-bottom:1px solid #ffffff1c}
+.pricing-heading{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:34px}
+.pricing-heading h3{font:400 clamp(32px,4.3vw,56px)/1.04 'Space Grotesk',sans-serif;letter-spacing:-.05em;max-width:770px;margin:0 0 16px}
+.pricing-heading p{font-size:16px;color:#aab1ab;line-height:1.6}
+.pricing-contract{font-size:11px;color:#8e9791;text-align:right;line-height:1.8;white-space:nowrap;padding-bottom:4px}
+.pricing-contract strong{font-weight:500;color:#e0e6dc}
+.seat-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.seat-card{min-width:0;display:flex;flex-direction:column;padding:25px 24px 21px;border:1px solid #ffffff22;border-radius:18px;background:linear-gradient(160deg,#222628,#181b1c 70%);position:relative;overflow:hidden}
+.seat-featured{border-color:#d1fe1766;background:radial-gradient(ellipse at 100% 0,#a5ca2433,transparent 65%),#1b201a}
+.seat-card-top{display:flex;justify-content:space-between;gap:9px;align-items:center;margin-bottom:24px}
+.seat-card-top h4{font:500 24px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-transform:uppercase;margin:0;color:#f3f5ec}
+.seat-badge{font:500 9px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.2px;border-radius:3px;padding:6px 7px;background:#d1fe17;color:#182103;white-space:nowrap}
+.seat-price{min-height:89px}
+.seat-price strong{font:500 clamp(40px,4.8vw,64px)/1 'Space Grotesk';letter-spacing:-.06em;color:#fff;display:block}
+.seat-featured .seat-price strong{color:#d1fe17}
+.seat-price>span{display:block;font-size:11px;color:#abb3a8;margin-top:8px}
+.seat-allocation{padding:16px 14px;margin:20px 0 8px;background:#ffffff06;border:1px solid #ffffff07;border-radius:9px;min-height:67px;display:flex;gap:8px;align-items:center}
+.seat-allocation strong{font-weight:500;font-size:18px;color:#ecf2e6;white-space:nowrap}
+.seat-allocation span{font-size:11px;color:#9da994}
+.seat-card:last-child .seat-allocation strong{font-size:13px;white-space:normal}
+.seat-card ul{list-style:none;padding:0;margin:12px 0 24px;flex:1;font-size:13px;line-height:1.6;color:#c7cec2}
+.seat-card li{position:relative;padding-left:20px;margin:0 0 13px}
+.seat-card li:before{content:'✓';position:absolute;left:0;top:0;color:#9daf90;font-size:12px}
+.seat-action{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 15px;border:1px solid #ffffff1f;border-radius:9px;color:#f4f6f1;font-size:12px;font-weight:500;background:#ffffff07;text-decoration:none;transition:background .15s}
+.seat-featured .seat-action{background:#d1fe17;border-color:#d1fe17;color:#152000}
+.seat-action:hover{background:#ffffff14}.seat-featured .seat-action:hover{background:#e1ff62}
+.offer-proposal{color:#798675;font-size:10px;margin-top:14px;line-height:1.6}
+.agency-included{padding:46px 0 35px;scroll-margin-top:90px}
+.pricing-label{font-size:9px;letter-spacing:1.1px;color:#9bab8d;margin-bottom:10px}
+.agency-included h4,.credit-configurator h4{font:400 29px/1.15 'Space Grotesk';letter-spacing:-.035em;color:#eef3e8;margin:0}
+.agency-included ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;list-style:none;padding:0;margin:27px 0 0}
+.agency-included li{display:flex;align-items:start;gap:12px;padding:19px 0;border-top:1px solid #ffffff18;min-height:78px}
+.included-check{font-size:11px;color:#d1fe17;line-height:1.9}
+.agency-included p{font-size:13px;color:#c8d1c1;line-height:1.75;margin:0;max-width:280px}
+.credit-configurator{padding:32px;border:1px solid #ffffff20;border-radius:18px;background:radial-gradient(ellipse at 0 0,#617b1a12,transparent 60%),#181c1a;scroll-margin-top:85px}
+.credit-configurator>header{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.credit-rate{font-size:11px;color:#8e9e83;background:#ffffff04;border:1px solid #ffffff15;padding:10px 13px;border-radius:5px;white-space:nowrap}
+.credit-rate output{color:#d9e8c8;font-weight:500;font-size:15px}
+.credit-selector{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:38px}
+.credit-choice output{font:400 clamp(43px,5.5vw,72px)/1 'Space Grotesk';letter-spacing:-.06em;color:#d1fe17;display:block}
+.credit-choice span,.credit-pack-price span{display:block;font-size:12px;color:#96a48d;margin-top:8px}
+.credit-pack-price{text-align:right}.credit-pack-price output{font:400 36px/1 'Space Grotesk';letter-spacing:-.04em;color:#edf3e6}
+#credit-pack-slider{appearance:none;-webkit-appearance:none;display:block;width:100%;height:6px;cursor:pointer;border-radius:99px;background:linear-gradient(to right,#d1fe17 0 var(--position),#37402f var(--position) 100%);margin:34px 0 0;outline-offset:8px;accent-color:#d1fe17}
+#credit-pack-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:23px;height:23px;border:5px solid #d1fe17;border-radius:50%;background:#182012;box-shadow:0 0 0 5px #d1fe1710}
+#credit-pack-slider::-moz-range-thumb{width:13px;height:13px;border:5px solid #d1fe17;border-radius:50%;background:#182012}
+.credit-stops{display:flex;justify-content:space-between;margin-top:17px;gap:12px}
+.credit-stops button{font:500 12px/1 Inter,sans-serif;background:none;color:#788a6d;padding:9px 13px;min-width:55px;min-height:35px;border:1px solid transparent;border-radius:6px;cursor:pointer}
+.credit-stops button[aria-pressed=true]{color:#d1fe17;background:#d1fe1709;border-color:#d1fe1739}
+.credit-stops button:first-child{margin-left:-13px}.credit-stops button:last-child{margin-right:-13px}
+.agency-quote{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:29px;padding-top:26px;border-top:1px solid #ffffff20}
+.agency-quote h5{font-size:14px;font-weight:500;color:#e1ead6;margin:0 0 17px}
+.agency-quote dl{margin:0;max-width:430px}
+.agency-quote dl>div{display:flex;justify-content:space-between;gap:15px;padding:8px 0;font-size:12px;line-height:1.5}
+.agency-quote dt{color:#a8b49b}.agency-quote dt span{color:#7d8d70}
+.agency-quote dd{margin:0;color:#dce7d2;font-variant-numeric:tabular-nums}
+.agency-quote-total{padding-left:40px;border-left:1px solid #ffffff18;align-self:stretch}
+.agency-quote-total>span{font-size:9px;letter-spacing:1px;color:#94a580}
+.agency-quote-total>div:not(.credit-pool){margin-top:12px;display:flex;gap:5px;align-items:baseline;flex-wrap:wrap}
+.agency-quote-total #agency-monthly{font:400 clamp(34px,4vw,48px)/1 'Space Grotesk';letter-spacing:-.05em;color:#f0f7e7}
+.agency-quote-total>div>span{font-size:12px;color:#849872}
+.agency-quote-total>p{font-size:11px;color:#91a17f;margin:10px 0 17px}
+.credit-pool{font-size:12px;color:#9db18c;padding-top:14px;border-top:1px solid #ffffff0d;line-height:1.8}
+.credit-pool strong{font-size:15px;font-weight:500;color:#d4e6c0}
+.credit-pool span{display:block;font-size:10px!important;color:#7f936e!important}
+.pricing-full-offer{margin-top:28px}.pricing-full-offer>summary{font-size:14px}
+.pricing-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.pricing-section :focus-visible{outline:2px solid #d1fe17;outline-offset:4px}
+@media(max-width:950px){.seat-card{padding:22px 17px}.seat-card-top{display:block}.seat-badge{display:inline-block;margin-top:8px}.seat-card-top{min-height:60px;margin-bottom:14px}.seat-allocation{display:block}.seat-allocation span{display:block;margin-top:3px}}
+@media(max-width:750px){.pricing-section{padding-top:38px}.pricing-heading{display:block}.pricing-heading h3{font-size:35px;line-height:1.1}.pricing-heading p{font-size:14px}.pricing-contract{display:block;text-align:left;margin-top:17px;font-size:10px}.pricing-contract br{display:none}.pricing-contract strong{margin-left:8px}.seat-cards{grid-template-columns:1fr}.seat-card{padding:25px}.seat-card-top{display:flex;min-height:0;margin-bottom:20px}.seat-badge{margin:0}.seat-price{min-height:0}.seat-price strong{font-size:57px}.seat-allocation{display:flex;min-height:58px}.seat-allocation span{margin:0}.seat-card ul{margin-bottom:17px}.agency-included ul{grid-template-columns:1fr 1fr;gap:0 18px}.agency-included h4,.credit-configurator h4{font-size:27px}.agency-included li{padding:16px 0}.agency-included p{font-size:12px}.credit-configurator{padding:25px 20px}.credit-configurator>header{display:block}.credit-rate{display:inline-block;margin-top:17px}.credit-selector{gap:10px;margin-top:28px}.credit-choice output{font-size:41px}.credit-pack-price output{font-size:26px}.credit-choice span,.credit-pack-price span{font-size:10px}.credit-stops{gap:0}.credit-stops button{min-height:44px}.agency-quote{grid-template-columns:1fr;gap:25px}.agency-quote-total{padding:22px 0 0;border-left:0;border-top:1px solid #ffffff18}.agency-quote-total #agency-monthly{font-size:44px}.pricing-full-offer>summary{font-size:13px}}

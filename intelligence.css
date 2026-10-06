@@ -1,0 +1,37 @@
+/* Part 4 uses the same editorial shell as the other four pages. */
+#intelligence .intel-intro{max-width:870px;font-size:14px;color:#949e98;margin-bottom:26px}
+#intelligence .editorial-menu a:first-child{color:var(--lime)}
+.intel-synthesis{padding-top:40px}
+.intel-title-row{display:flex;align-items:baseline;justify-content:space-between;gap:22px;margin-bottom:30px}
+.intel-title-row h3{font:400 clamp(27px,3vw,43px)/1.15 'Space Grotesk',sans-serif;letter-spacing:-.035em;color:#f2f4ee;margin:0}
+.intel-title-row>a{font-size:12px;color:#b7c795;white-space:nowrap}
+.intel-teardowns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:35px}
+.intel-teardown{position:relative;background:#15191b;border:1px solid #ffffff16;border-radius:14px;padding:30px 28px 8px;min-width:0}
+.intel-logo{position:absolute;top:28px;right:26px;max-width:110px;height:28px;object-fit:contain;opacity:.9}
+.intel-logo[src$="runway.svg"]{filter:brightness(0) invert(1)}
+.intel-teardown h4{font:400 21px/1.35 'Space Grotesk',sans-serif;letter-spacing:-.025em;margin:6px 115px 30px 0;color:#edf1e6}
+.intel-teardown ul{list-style:none;padding:0;margin:0}
+.intel-teardown li{padding:19px 0 0;border-top:1px solid #ffffff16;margin:0 0 22px;font-size:14px;line-height:1.75}
+.intel-teardown li>strong:first-child{display:block;margin-bottom:8px;font-size:14px}
+.intel-teardown li:nth-child(3)>strong:first-child{color:#d1fe17}
+.intel-teardown li:last-child{color:#aab2b1}
+.draft-source .intel-gap{font-size:clamp(18px,1.65vw,23px);line-height:1.65;letter-spacing:-.02em;color:#e2e8df;padding:30px 34px;background:linear-gradient(115deg,#212917,#141a17);border:1px solid #d1fe1733;border-radius:14px;margin:0 0 28px}
+.draft-source .intel-gap>strong{display:block;color:#d1fe17;font:400 clamp(25px,2.5vw,35px)/1.2 'Space Grotesk',sans-serif;margin-bottom:18px}
+.draft-source .intel-boundaries{border-left:2px solid #9cae6e;padding:3px 0 3px 25px;margin:30px 0;color:#b4bcb8}
+.intel-verdicts{scroll-margin-top:105px;border:1px solid #ffffff16;border-radius:12px}
+.intel-verdicts table{table-layout:fixed;min-width:740px}
+.intel-verdicts th:first-child{width:25%}.intel-verdicts th:nth-child(2){width:41%}.intel-verdicts th:last-child{width:34%}
+.intel-verdicts td:last-child>strong:first-child{display:block;color:#c6d7ab;margin-bottom:7px}
+.intel-verdicts tr:nth-last-child(-n+2) td:last-child>strong:first-child{color:#e1c593}
+.intel-verdicts tbody tr:nth-child(even){background:#ffffff03}
+.intel-verdicts tbody tr:last-child td{border-bottom:0}
+.intel-support .intel-key-points{max-width:1040px;font-size:16px;line-height:1.8}
+.intel-support .intel-key-points p:last-child{margin-bottom:27px}
+.intel-support .intel-evidence>summary{font-size:14px;color:#abb8a0;cursor:pointer}
+.intel-evidence .draft-detail{padding-top:18px}
+.intel-evidence .tablewrap{border:1px solid #ffffff12;border-radius:10px;margin-bottom:32px}
+.intel-evidence .tablewrap table{min-width:840px}
+.intel-evidence .tablewrap:focus-visible,.intel-verdicts:focus-visible{outline:2px solid #d1fe17;outline-offset:3px}
+@media(max-width:1050px){.intel-teardown h4{margin-right:0;padding-top:45px}.intel-logo{left:28px;right:auto}}
+@media(max-width:750px){.intel-title-row{align-items:flex-start;gap:14px}.intel-title-row>a{font-size:10px;padding-top:9px}.intel-teardowns{grid-template-columns:1fr;gap:16px}.intel-teardown{padding:23px 21px 4px}.intel-teardown h4{padding-top:0;margin:0 105px 24px 0;font-size:20px}.intel-logo{top:25px;left:auto;right:21px;max-width:95px;height:24px}.draft-source .intel-gap{padding:25px 22px;font-size:18px}.draft-source .intel-gap>strong{font-size:27px}.draft-source .intel-boundaries{padding-left:20px}.intel-support .intel-key-points{font-size:15px}.intel-verdicts table{font-size:13px}}
+@media print{.intel-teardowns{display:block}.intel-teardown{break-inside:avoid}.intel-evidence>.draft-detail{display:block!important}.intel-evidence .tablewrap table{min-width:0}}

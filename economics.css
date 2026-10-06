@@ -1,0 +1,104 @@
+.layout:has(#economics.active)>.intro,.layout:has(#economics.active)>.gallery,.layout:has(#economics.active)>.media-note{display:none}
+#economics{padding:25px clamp(0px,3vw,52px) 0;--econ-accent:#d1fe17}
+#economics .sectionhead{margin:12px 0 30px}
+#economics .sectionhead h2{font-size:clamp(38px,4.6vw,70px);font-weight:400;letter-spacing:-.055em;text-transform:none}
+.econ-chapter{padding:52px 0 40px;border-bottom:1px solid #ffffff19;scroll-margin-top:100px}
+.econ-chapter>h3{font-size:clamp(27px,3vw,43px);font-weight:400;line-height:1.15;max-width:1050px;margin:0 0 25px;color:#f2f4ee}
+.econ-source{font-size:15px;line-height:1.85;color:#c3c9c8}
+.econ-source p{margin:0 0 23px;max-width:1110px}
+.econ-source h4{font-size:23px;line-height:1.25;font-weight:400;margin:30px 0 18px;color:#f2f4ee}
+.econ-source strong{color:#eef1ed;font-weight:500}
+.econ-source ul{padding-left:22px;margin:0 0 24px}
+.econ-source li{padding-left:3px;margin-bottom:10px}
+.econ-source a{color:#afbe9e;text-decoration:underline;text-decoration-color:#a7b89455;text-underline-offset:3px;overflow-wrap:anywhere}
+.econ-source code{display:block;padding:18px 22px;background:#1b2018;color:#d8e8c7;border-left:2px solid #748b55;font:14px/1.8 'Space Grotesk',sans-serif;white-space:normal}
+.econ-source .tablewrap{overflow-x:auto;margin:25px 0 30px;overscroll-behavior-inline:contain}
+.econ-source table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.65;min-width:560px}
+.econ-source th{text-align:left;color:#f0f4e9;font-size:12px;font-weight:500;padding:16px 18px;background:#1c211b}
+.econ-source td{padding:17px 18px;border-bottom:1px solid #ffffff14;vertical-align:top}
+.econ-source th:first-child,.econ-source td:first-child{padding-left:0}
+.econ-source th:first-child{padding-left:18px}
+.econ-source blockquote{border-left:1px solid #7e9660;padding:0 0 0 25px;margin:5px 0 25px;max-width:1030px}
+.econ-disclosure{border:0;border-top:1px solid #ffffff1c;background:none;margin:0}
+.econ-disclosure>summary{display:block;position:relative;padding:24px 36px 24px 0;list-style:none}
+.econ-disclosure>summary h4{font-size:21px;margin:0;line-height:1.35}
+.econ-disclosure>summary:after,.econ-timing>summary:after{content:'+';position:absolute;right:0;top:24px;font:21px/1 'Space Grotesk';color:#a6b992}
+.econ-disclosure[open]>summary:after,.econ-timing[open]>summary:after{content:'−'}
+.econ-disclosure>div.econ-source{padding:0 0 12px}
+#economics-cost>.econ-source:last-child>p:last-child,#economics-objections>.econ-source:last-child>p:last-child{font-size:12px;color:#959e97;line-height:1.8}
+#economics-infrastructure .econ-source>p:first-child{font-size:20px;max-width:900px;color:#eff3e9}
+#economics-infrastructure table{table-layout:fixed;min-width:850px}
+#economics-infrastructure th:first-child{width:15%}
+#economics-infrastructure th:nth-child(2){color:#d6efb7}
+#economics-infrastructure td:nth-child(2){background:#a3c47106}
+#economics-objections .econ-source>p>em{font-style:normal}
+.econ-calculator{margin:36px 0 28px;padding:30px 0;border-block:1px solid #ffffff24;scroll-margin-top:100px}
+.econ-calc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;margin-bottom:30px}
+.econ-kicker{display:block;color:#9fae90;font-size:9px;letter-spacing:1.2px;margin-bottom:12px}
+.econ-calc-head h4{font-size:34px;font-weight:400;letter-spacing:-.04em}
+#roi-reset{font-size:11px;color:#a5b198;background:none;border:0;border-bottom:1px solid #7b8c6755;padding:6px 0;white-space:nowrap}
+.econ-calc-grid{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(320px,1.2fr);gap:clamp(30px,6vw,100px);align-items:center}
+.econ-input-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+#roi-inputs{min-width:0;margin:0}
+#roi-inputs label{display:flex;flex-direction:column;gap:10px;font-size:11px;color:#a4ada7}
+#roi-inputs input{font:400 25px 'Space Grotesk',sans-serif;letter-spacing:-.5px;color:#eef2e8;width:100%;min-width:0;border:1px solid #ffffff1e;background:#ffffff04;border-radius:5px;padding:12px 14px;outline-offset:3px}
+#roi-inputs input:focus-visible{outline:1px solid #d1fe17}
+#roi-inputs input[aria-invalid=true]{border-color:#e4a48b}
+#roi-ai{color:var(--econ-accent)!important}
+.econ-calc-caption{font-size:11px;line-height:1.75;color:#87938a;margin-top:15px}
+.econ-timing{margin-top:18px;border-top:1px solid #ffffff15}
+.econ-timing>summary{position:relative;display:block;padding:15px 25px 6px 0;font:12px/1.5 Inter,sans-serif;letter-spacing:0;color:#bac4b3}
+.econ-timing>summary:after{top:14px;font-size:15px}
+.econ-timing .econ-input-pair{margin-top:10px}
+.econ-chart{margin:0;min-width:0;align-self:start}
+.econ-chart figcaption{font-size:10px;color:#8f9b92;letter-spacing:.2px;margin-bottom:3px}
+.econ-bars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(25px,4vw,65px);border-bottom:1px solid #ffffff17;padding:0 15px 15px}
+.econ-bar-stack{height:300px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.econ-bar-value{font:400 clamp(23px,3.3vw,45px)/1.15 'Space Grotesk';letter-spacing:-.06em;margin-bottom:12px;overflow-wrap:anywhere;max-width:100%;text-align:center}
+.econ-bar-fill{height:calc(var(--bar) * 225px);width:100%;max-width:150px;flex-shrink:0;background:linear-gradient(180deg,#7f8a91,#394247);border-radius:3px 3px 0 0;transition:height .3s ease}
+.ai .econ-bar-fill{background:linear-gradient(180deg,#d1fe17,#8db126)}
+.ai .econ-bar-value{color:var(--econ-accent)}
+.econ-bar-label{display:block;font-size:12px;text-align:center;margin:16px 0 4px;color:#d6ddd4}
+.econ-bar-time{display:block;font-size:10px;text-align:center;color:#869283}
+.econ-chart-baseline{font-size:9px;color:#647366;margin:9px 0 0 15px}
+.econ-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;border-top:1px solid #ffffff17;margin-top:30px;padding-top:24px}
+.econ-results output{display:block;font:400 clamp(32px,4vw,55px)/1.2 'Space Grotesk';letter-spacing:-.045em;color:#d8edb4;overflow-wrap:anywhere}
+.econ-results span{display:block;font-size:11px;color:#98a591;margin-top:7px}
+.econ-results .econ-unfavourable{color:#e5ad99}
+.econ-calculation-note{font-size:10px;line-height:1.8;color:#82917c;max-width:920px;margin-top:22px}
+.econ-error{color:#e5ad99;font-size:12px;line-height:1.6;margin-top:15px}
+.econ-error[hidden]{display:none}
+@media(max-width:750px){#economics{padding:16px 0 0}.econ-chapter{padding-block:35px 28px}.econ-chapter>h3{font-size:30px}.econ-calc-head{align-items:start}.econ-calc-head h4{font-size:28px}.econ-calc-grid{grid-template-columns:1fr;gap:25px}.econ-chart{width:100%}.econ-bars{padding-inline:25px;gap:40px}.econ-bar-value{font-size:36px}.econ-bar-stack{height:265px}.econ-bar-fill{height:calc(var(--bar) * 190px)}.econ-results{gap:15px}.econ-results output{font-size:33px}.econ-results span{font-size:10px}.econ-calculator{margin-top:26px}.econ-calc-head{gap:15px}#roi-reset{font-size:10px}.econ-source{font-size:14px}.econ-source table{font-size:13px}.econ-disclosure>summary h4{font-size:20px}.econ-source blockquote{padding-left:18px}.econ-source .tablewrap{position:relative}.econ-source td{padding:14px}.econ-source h4{font-size:22px}.econ-calculation-note{font-size:10px}}
+@media(max-width:380px){.econ-calc-head{flex-direction:column;gap:10px}.econ-results output{font-size:29px}.econ-bar-value{font-size:31px}}
+@media(prefers-reduced-motion:reduce){.econ-bar-fill{transition:none}}
+.econ-comparison{margin:36px 0 42px;padding:30px 0;border-block:1px solid #ffffff24;scroll-margin-top:100px}
+.econ-scope{font-size:12px;line-height:1.9;color:#9ea896;text-align:right}
+.econ-scope strong{font-weight:400;color:#e6eadd}
+.econ-brief>p{font-size:clamp(28px,3.4vw,45px);line-height:1.12;letter-spacing:-.045em;color:#e9eee3;margin:0 0 28px}
+.econ-brief-line{padding:14px 0;border-top:1px solid #ffffff15}
+.econ-brief-line span{display:block;color:#95a487;font-size:10px;margin-bottom:7px}
+.econ-brief-line strong{display:block;font-weight:400;font-size:17px;color:#e0e7d7}
+.econ-brief-line small{display:block;color:#8f9a88;line-height:1.7;font-size:11px;margin-top:5px;max-width:310px}
+.econ-results strong{display:block;font:400 clamp(32px,4vw,55px)/1.2 'Space Grotesk';letter-spacing:-.045em;color:#d8edb4}
+.econ-assumptions{margin:40px 0 52px}
+.econ-assumptions>h4{font-size:28px;font-weight:400;letter-spacing:-.025em;margin:0 0 26px;color:#eff3e9}
+.econ-assumption-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px)}
+.econ-assumption-grid h5{font-weight:400;font-size:19px;color:#dce7cc;margin:0 0 18px}
+.econ-assumption-grid dl{margin:0}
+.econ-assumption-grid dl>div{display:grid;grid-template-columns:115px 1fr;gap:18px;padding:14px 0;border-top:1px solid #ffffff17;font-size:12px;line-height:1.7}
+.econ-assumption-grid dt{color:#97a28f}
+.econ-assumption-grid dd{margin:0;color:#cdd5c7}
+.econ-assumption-note{font-size:11px;line-height:1.8;color:#9ba490;margin-top:18px}
+.econ-breakdown{margin:45px 0;padding-top:10px;border-top:1px solid #ffffff22}
+.econ-budget table{font-variant-numeric:tabular-nums;min-width:510px}
+.econ-budget th:first-child{width:52%}
+.econ-budget td:nth-child(2),.econ-budget th:nth-child(2){text-align:right;color:#bcc5c9}
+.econ-budget td:nth-child(3),.econ-budget th:nth-child(3){text-align:right;color:#d8edb4;background:#b2d86506}
+.econ-budget tr:nth-last-child(2) td{border-top:1px solid #8ea76270;background:#c0db7210;font-size:20px;padding-top:22px;padding-bottom:22px;color:#f0f6e7}
+.econ-budget tr:last-child td{color:#aab6a1}
+.econ-drivers table{min-width:640px}
+.econ-drivers th:first-child{width:26%}
+.econ-drivers th:last-child{width:25%}
+.econ-drivers td:last-child{font-variant-numeric:tabular-nums;color:#c8d7b9;background:#b2d86506}
+.econ-drivers td strong{color:#d5f282;font-weight:500}
+@media(max-width:750px){.econ-scope{text-align:left}.econ-brief>p{font-size:32px}.econ-assumption-grid{grid-template-columns:1fr;gap:28px}.econ-results strong{font-size:32px}.econ-assumption-grid dl>div{grid-template-columns:100px 1fr}.econ-calc-head{align-items:start}.econ-comparison{margin-top:25px}.econ-budget th:first-child{width:46%}}
