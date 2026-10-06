@@ -3,11 +3,11 @@
   function route() {
     const hash = location.hash.slice(1);
     if (hash === 'top') { window.scrollTo({top:0,behavior:'instant'}); return; }
-    const target = document.getElementById(hash || 'strategy');
-    const part = target?.closest('.section') || document.getElementById('strategy');
+    const target = document.getElementById(hash || 'overview');
+    const part = target?.closest('.section') || document.getElementById('overview');
     sections.forEach(section => section.classList.toggle('active', section === part));
     document.querySelectorAll('[data-section]').forEach(link => {
-      if (link.dataset.section === part.id) link.setAttribute('aria-current', 'page');
+      if (link.dataset.section === part.id) { link.setAttribute('aria-current', 'page'); link.parentElement.scrollTo({left:Math.max(0,link.offsetLeft-link.parentElement.offsetLeft-20),behavior:'instant'}); }
       else link.removeAttribute('aria-current');
     });
     if (target) {
