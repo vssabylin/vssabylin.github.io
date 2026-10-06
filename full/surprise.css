@@ -1,0 +1,46 @@
+.conquest-chapter>h3{max-width:1060px;font-size:clamp(29px,3.3vw,48px);line-height:1.18}
+.conquest-chapter>.draft-source>p:first-child{font-size:16px;color:#aeb7b2;max-width:850px}
+.conquest-matrix{border:1px solid #ffffff19;border-radius:14px;margin:30px 0!important}
+.conquest-matrix table{table-layout:fixed;min-width:620px}
+.conquest-matrix th,.conquest-matrix td{padding:24px 22px}
+.conquest-matrix th:first-child{width:27%}
+.conquest-matrix th:last-child{color:#d1fe17}
+.conquest-matrix td{font-size:18px}
+.conquest-matrix tr:last-child td{border-bottom:0}
+.conquest-number{white-space:nowrap}
+.conquest-bar{height:6px;border-radius:6px;background:#ffffff0b;margin-top:20px;overflow:hidden}
+.conquest-bar i{display:block;width:var(--share);height:100%;border-radius:inherit;background:#909b9d}
+.conquest-value:last-child .conquest-bar i{background:#d1fe17}
+.conquest-value:last-child .conquest-number{color:#d1fe17}
+.conquest-value:last-child strong{color:inherit}
+.draft-source .conquest-read{border-left:2px solid #d1fe17;padding:4px 0 4px 25px;font-size:18px;max-width:1040px;margin-bottom:28px}
+.draft-source .conquest-networks{color:#9eaca2;font-size:14px;max-width:940px}
+.conquest-plays-title{font:400 32px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:45px 0 25px;color:#f0f4eb;scroll-margin-top:100px}
+.conquest-plays{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:32px}
+.conquest-play{background:#15191b;border:1px solid #ffffff17;border-radius:14px;padding:26px 24px 12px;min-width:0}
+.conquest-play h4{font:400 23px/1.3 'Space Grotesk',sans-serif;letter-spacing:-.03em;color:#eff3e7;margin:0 0 22px;min-height:90px}
+.conquest-play ul{list-style:none;padding:0;margin:0}
+.conquest-play li{padding:0;margin:0 0 22px;font-size:14px;line-height:1.8}
+.conquest-signal details{border-block:1px solid #ffffff16;padding:12px 0;color:#9ca9a1}
+.conquest-signal summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;font-size:12px}
+.conquest-signal summary::after{content:'+';color:#aebf90}
+.conquest-signal details[open] summary::after{content:'−'}
+.conquest-signal details>div{padding-top:12px}
+.conquest-signal summary::-webkit-details-marker{display:none}
+.conquest-play li:last-child{color:#dde8bf}
+.conquest-play li:last-child em{display:block;font-size:16px;line-height:1.7;font-style:normal;color:#d6e5a9;margin-top:10px}
+.draft-source .conquest-payoff{font-size:21px;line-height:1.65;letter-spacing:-.015em;color:#e0e7d5;border-top:1px solid #ffffff16;padding-top:28px;margin-top:12px}
+.draft-source .conquest-weekly{padding:20px 24px;background:#20261a;border-radius:10px;color:#cad8b5}
+.draft-source .conquest-method{font-size:12px!important;line-height:1.8;border-top:1px solid #ffffff16;padding-top:20px}
+.conquest-method a{white-space:nowrap;color:#d1fe17}
+.expert-chapter>h3{max-width:880px}
+.expert-chapter>.draft-source>p:first-child{font-size:18px;max-width:850px}
+.expert-evidence{margin-bottom:30px}
+.expert-evidence>summary{cursor:pointer}
+.expert-evidence table{table-layout:fixed;min-width:680px}
+.expert-evidence th:first-child{width:50%}
+.expert-evidence tbody tr:first-child{background:#d1fe1709}
+.draft-source .expert-own-view{border-left:2px solid #889d5d;padding-left:24px;max-width:1000px}
+@media(max-width:1050px){.conquest-plays{grid-template-columns:1fr}.conquest-play h4{min-height:0}.conquest-play{padding:25px 26px 10px}.conquest-matrix th,.conquest-matrix td{padding:20px 16px}.conquest-matrix td{font-size:16px}}
+@media(max-width:750px){.conquest-chapter>h3{font-size:31px}.conquest-plays{gap:15px}.draft-source .conquest-read{font-size:16px;padding-left:20px}.draft-source .conquest-payoff{font-size:19px}.expert-chapter>.draft-source>p:first-child{font-size:16px}.conquest-plays-title{font-size:28px}.conquest-play{padding-inline:21px}.conquest-play h4{font-size:24px}}
+@media print{.conquest-plays{display:block}.conquest-play{break-inside:avoid}.conquest-signal details>div{display:block!important}.expert-evidence>.draft-detail{display:block!important}}
