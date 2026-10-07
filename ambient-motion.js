@@ -1,5 +1,5 @@
 (() => {
-  const scene = document.querySelector('.sharp-start-scene');
+  document.querySelectorAll('.sharp-start-scene, .product-art').forEach(scene => {
   const video = scene?.querySelector('.ambient-video');
   const toggle = scene?.querySelector('.ambient-toggle');
   if (!video || !toggle) return;
@@ -54,4 +54,5 @@
   document.addEventListener('visibilitychange', update);
   toggle.hidden = false;
   paintToggle();
+  });
 })();
