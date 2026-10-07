@@ -578,3 +578,14 @@
 @media(min-width:621px){.v2 .delivery-hero{min-height:340px}.v2 .delivery-hero figure{left:24%}.v2 .delivery-hero img{object-position:50% 53%}.v2 .delivery-hero figure:after{background:linear-gradient(90deg,#0b100d,transparent 45%)}}
 @media(min-width:621px){.v2 .delivery-hero{min-height:360px}.v2 .delivery-hero figure{left:30%}.v2 .hiring-halves article+article{position:relative;padding-left:0;border-left:0}.v2 .hiring-halves article+article:before{content:'';position:absolute;left:-30px;top:0;bottom:0;width:1px;background:var(--line)}}
 @media(min-width:621px) and (max-width:900px){.v2 .hiring-halves article+article:before{left:-14px}}
+
+/* Opening urgency and closing echo, with the supporting argument in Evidence. */
+.v2 .hero-urgency{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:40px;border-top:1px solid var(--line);margin-top:27px;padding-top:23px}
+.v2 .hero-urgency p{font-size:13px;color:#bfc9b5;max-width:760px}
+.v2 .hero-urgency>strong{flex-shrink:0;color:var(--lime);font:500 24px/1.25 'Space Grotesk',sans-serif;letter-spacing:-.6px}
+.v2 .hiring-bottom .final-thought small{display:block;font:400 13px/1.6 Inter,sans-serif;letter-spacing:0;color:#b8c4ab;margin-bottom:9px}
+@media(max-width:1000px){.v2 .hero-urgency{display:block}.v2 .hero-urgency>strong{display:block;margin-top:13px}}
+@media(max-width:620px){.v2 .hero-urgency{margin-top:28px;padding-top:23px}.v2 .hero-urgency p{font-size:13px}.v2 .hero-urgency>strong{font-size:24px}}
+
+.v2 .hero-urgency p small{display:block;font-size:10px;color:#9eae91;margin-top:6px;letter-spacing:.2px}
+.v2 .hiring-detail+p{margin-top:22px}
