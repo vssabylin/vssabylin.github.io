@@ -219,7 +219,7 @@
 .v2 .delivery-objections h3{font:500 22px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.6px;margin-bottom:9px}
 .v2 .delivery-objections p{font-size:13px;color:#b1bfa4;max-width:480px}
 
-/* 10: dots encode the fixed sample, not share of product usage. */
+/* 10: independent series, consistent colours and a common 0–100% scale. */
 .v2 .hiring-halves{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:29px}
 .v2 .hiring-halves article+article{padding-left:38px;border-left:1px solid var(--line)}
 .v2 .signal-number{font:500 clamp(100px,10.5vw,160px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.07em;color:var(--lime)}
@@ -541,9 +541,40 @@
 @media(max-width:370px){.v2 .signal-dots{grid-template-columns:repeat(10,22px);gap:10px}.v2 .signal-dots i{height:22px;width:22px}.v2 .cost-half>strong{font-size:38px}.v2 .hero-stats strong{font-size:29px}.v2 .time-comparison{font-size:31px;gap:19px}.v2 .market-numbers article{grid-template-columns:130px 1fr}.v2 .market-numbers strong{font-size:37px}}
 
 .v2 #model-matrix,.v2 #model-lab,.v2 #agency-credits{scroll-margin-top:calc(var(--header) + 20px)}
-@media(min-width:621px){.v2 .delivery-hero img{position:absolute;top:-22%;height:165%;object-fit:contain;object-position:right center}}
+
 
 @media(min-width:621px) and (max-width:900px){.v2 .signal-dots{--dot:clamp(14px,calc((100vw - 190px)/20 - 9px),21px);grid-template-columns:repeat(10,var(--dot));gap:10px}.v2 .signal-dots i{width:var(--dot);height:var(--dot)}}
 @media(max-width:620px){.v2 .signal-dots{--dot:clamp(18px,calc((100vw - 126px)/10),24px);grid-template-columns:repeat(10,var(--dot));gap:10px}.v2 .signal-dots i{width:var(--dot);height:var(--dot)}}
 
 @media(min-width:621px){.v2 .hero-visual .ambient-caption{bottom:70px}}
+
+/* Keep the decision on the slide; supporting detail remains in Evidence. */
+.v2 .market-story>p.budget-thesis{font-size:12px;color:#ced7c5;margin-top:15px}
+.v2 .proof-actions>p.model-thesis{font-size:12px;line-height:1.6;max-width:300px}
+.v2 .model-thesis strong{color:var(--text);font-weight:500}
+.v2 .rival-move p small{display:block;font:400 13px/1.6 Inter,sans-serif;letter-spacing:0;color:#bdc9b0;margin-top:9px}
+.v2 #slide-8 .offer-rationale{font-size:13px;color:#b5c2a8;margin:0 0 22px}
+.v2 .offer-rationale strong{color:var(--text);font-weight:500}
+.v2 .hiring-halves{gap:60px}
+.v2 .hiring-halves article+article{padding-left:38px}
+.v2 .hiring-halves .signal-kicker{font-size:10px;letter-spacing:1.8px;color:var(--lime);margin:0 0 13px}
+.v2 .signal-number{font-size:clamp(96px,9vw,136px)}
+.v2 .hiring-halves h3{margin:18px 0 26px}
+.v2 .tool-signals{display:grid;gap:18px}
+.v2 .tool-signal{--tool-color:var(--lime)}
+.v2 .tool-signal.runway{--tool-color:#76bdf5}
+.v2 .tool-signal.firefly{--tool-color:#f59a88}
+.v2 .tool-signal-label{display:flex;justify-content:space-between;gap:15px;align-items:baseline;font-size:13px;margin-bottom:8px}
+.v2 .tool-signal-label>span:first-child{color:var(--tool-color)}
+.v2 .tool-signal-label>span:last-child{display:flex;align-items:baseline;gap:13px}
+.v2 .tool-signal-label strong{font-size:13px;font-weight:500;color:#e4eadf;white-space:nowrap}
+.v2 .tool-signal-label small{font-size:11px;color:#a8b69c;min-width:27px;text-align:right}
+.v2 .tool-track{height:8px;background:#ffffff09;border-radius:2px;overflow:hidden}
+.v2 .tool-track i{display:block;height:100%;background:var(--tool-color);border-radius:2px;transform-origin:left}
+.v2 .hiring-bottom .final-thought>span{display:block;font:500 9px/1.4 Inter,sans-serif;letter-spacing:1.5px;color:#afbc9e;margin-bottom:10px}
+@media(prefers-reduced-motion:no-preference){.v2 .hiring-halves.entered .tool-track i{animation:cost-enter 1.1s cubic-bezier(.16,.7,.24,1) both}}
+@media(max-width:900px){.v2 .hiring-halves{gap:27px}.v2 .hiring-halves article+article{padding-left:24px}.v2 .tool-signal-label{font-size:12px}}
+@media(max-width:620px){.v2 .hiring-halves article+article{padding:26px 0 0}.v2 .signal-number{font-size:114px}.v2 .tool-signal-label{font-size:13px}.v2 .proof-actions>p.model-thesis{font-size:12px}.v2 .market-story>p.budget-thesis{font-size:13px}}
+@media(min-width:621px){.v2 .delivery-hero{min-height:340px}.v2 .delivery-hero figure{left:24%}.v2 .delivery-hero img{object-position:50% 53%}.v2 .delivery-hero figure:after{background:linear-gradient(90deg,#0b100d,transparent 45%)}}
+@media(min-width:621px){.v2 .delivery-hero{min-height:360px}.v2 .delivery-hero figure{left:30%}.v2 .hiring-halves article+article{position:relative;padding-left:0;border-left:0}.v2 .hiring-halves article+article:before{content:'';position:absolute;left:-30px;top:0;bottom:0;width:1px;background:var(--line)}}
+@media(min-width:621px) and (max-width:900px){.v2 .hiring-halves article+article:before{left:-14px}}
