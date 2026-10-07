@@ -589,3 +589,4 @@
 
 .v2 .hero-urgency p small{display:block;font-size:10px;color:#9eae91;margin-top:6px;letter-spacing:.2px}
 .v2 .hiring-detail+p{margin-top:22px}
+@media(min-width:621px){.v2 .winner-title{right:100px}}
