@@ -545,3 +545,5 @@
 
 @media(min-width:621px) and (max-width:900px){.v2 .signal-dots{--dot:clamp(14px,calc((100vw - 190px)/20 - 9px),21px);grid-template-columns:repeat(10,var(--dot));gap:10px}.v2 .signal-dots i{width:var(--dot);height:var(--dot)}}
 @media(max-width:620px){.v2 .signal-dots{--dot:clamp(18px,calc((100vw - 126px)/10),24px);grid-template-columns:repeat(10,var(--dot));gap:10px}.v2 .signal-dots i{width:var(--dot);height:var(--dot)}}
+
+@media(min-width:621px){.v2 .hero-visual .ambient-caption{bottom:70px}}
